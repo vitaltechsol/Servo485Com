@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servo485Com", "Servo485Com.csproj", "{CFCDDE76-C7E3-4844-82F0-ACE0BD1DF8CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFCDDE76-C7E3-4844-82F0-ACE0BD1DF8CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFCDDE76-C7E3-4844-82F0-ACE0BD1DF8CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFCDDE76-C7E3-4844-82F0-ACE0BD1DF8CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFCDDE76-C7E3-4844-82F0-ACE0BD1DF8CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {287F9E3D-343C-4936-AFF0-0C5330E0E29F}
+	EndGlobalSection
+EndGlobal
