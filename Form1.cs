@@ -14,25 +14,20 @@ namespace Servo485Com
     public partial class Form1 : Form
     {
 
-
-        ModbusClient mbc = new ModbusClient("COM3")
+        ModbusClient mbc = new ModbusClient("192.168.1.173", 502)
         {
 
-            Baudrate = 115200,
-            UnitIdentifier = 4,
-            StopBits = System.IO.Ports.StopBits.Two,
-            Parity = System.IO.Ports.Parity.None
+            UnitIdentifier = 2,
 
         };
-
 
         public Form1()
         {
             //   mbc.IPAddress = "192.168.1.173"; // "192.168.1.175";
             //  mbc.Port = 502;
-            mbc.SerialPort = "COM3";
+            //mbc.SerialPort = "COM3";
             InitializeComponent();
-            mbc.UnitIdentifier = Convert.ToByte(this.txbDriverID.Text);
+          //  mbc.UnitIdentifier = Convert.ToByte(this.txbDriverID.Text);
         }
 
         // Change Custom
@@ -119,28 +114,37 @@ namespace Servo485Com
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-
-            var mbc = new ModbusClient("COM3")
-            {
-
-                Baudrate = 115200,
-                UnitIdentifier = 4,
-                StopBits = System.IO.Ports.StopBits.Two,
-                Parity = System.IO.Ports.Parity.None
-
-            };
-
-            // Assuming you've already created and connected your ModbusClient:
             mbc.Connect();
 
             var servo = new AasdServoRs485(mbc);
 
             // One-time setup for RS-485 positioning via communication:
-            servo.Init();
+            servo.Init(setCommControlMasks: false);
 
             // Move from 0 -> +1000 pulses:
-            servo.MoveToPulses(Int32.Parse(txtPosition.Text), 300);
+            //servo.MoveToPulses(Int32.Parse(txtPosition.Text), Int32.Parse(txbSpeed.Text));
+            servo.MoveTo(Int32.Parse(txtPosition.Text), Int32.Parse(txbSpeed.Text), AccelMode.Linear, 100);
+
+
+            // Optional: go back home later
+            // servo.MoveHome();
+
+            mbc.Disconnect();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            mbc.Connect();
+
+            var servo = new AasdServoRs485(mbc);
+
+            // One-time setup for RS-485 positioning via communication:
+            servo.Init(setCommControlMasks: false);
+
+            // Move from 0 -> +1000 pulses:
+            //servo.MoveToPulses(Int32.Parse(txtPosition.Text), Int32.Parse(txbSpeed.Text));
+            servo.MoveTo(Int32.Parse(txtPosition.Text) *-1, Int32.Parse(txbSpeed.Text), AccelMode.Linear, 100);
+
 
             // Optional: go back home later
             // servo.MoveHome();

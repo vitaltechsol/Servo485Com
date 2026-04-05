@@ -45,6 +45,7 @@ namespace Servo485Com
             this.button3 = new System.Windows.Forms.Button();
             this.txtPosition = new System.Windows.Forms.TextBox();
             this.txbSpeed = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -75,7 +76,7 @@ namespace Servo485Com
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(98, 103);
+            this.btnRead.Location = new System.Drawing.Point(70, 103);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(75, 23);
             this.btnRead.TabIndex = 3;
@@ -120,7 +121,7 @@ namespace Servo485Com
             // 
             this.textBox5.Location = new System.Drawing.Point(14, 103);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(78, 20);
+            this.textBox5.Size = new System.Drawing.Size(50, 20);
             this.textBox5.TabIndex = 8;
             this.textBox5.Text = "8";
             // 
@@ -162,33 +163,46 @@ namespace Servo485Com
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(428, 13);
+            this.button3.Location = new System.Drawing.Point(392, 104);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(93, 23);
+            this.button3.Size = new System.Drawing.Size(68, 23);
             this.button3.TabIndex = 13;
-            this.button3.Text = "Test Move";
+            this.button3.Text = "Move Fwd";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // txtPosition
             // 
-            this.txtPosition.Location = new System.Drawing.Point(264, 16);
+            this.txtPosition.Location = new System.Drawing.Point(228, 106);
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.Size = new System.Drawing.Size(76, 20);
             this.txtPosition.TabIndex = 14;
+            this.txtPosition.Text = "3000";
             // 
             // txbSpeed
             // 
-            this.txbSpeed.Location = new System.Drawing.Point(346, 16);
+            this.txbSpeed.Location = new System.Drawing.Point(310, 106);
             this.txbSpeed.Name = "txbSpeed";
             this.txbSpeed.Size = new System.Drawing.Size(76, 20);
             this.txbSpeed.TabIndex = 15;
+            this.txbSpeed.Text = "10";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(466, 104);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(86, 23);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "Move Back";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 450);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.txbSpeed);
             this.Controls.Add(this.txtPosition);
             this.Controls.Add(this.button3);
@@ -230,6 +244,7 @@ namespace Servo485Com
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox txtPosition;
         private System.Windows.Forms.TextBox txbSpeed;
+        private System.Windows.Forms.Button button4;
     }
 }
 
